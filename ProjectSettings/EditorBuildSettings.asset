@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: c150696d1445fe94889bb45f7d0901a0
   - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: ea1496b7c60673b47b93bc870509737a
+  - enabled: 1
     path: Assets/Scenes/Desert village.unity
     guid: e8fdd2e0272838f4985ce8134d23dd54
   m_configObjects: {}

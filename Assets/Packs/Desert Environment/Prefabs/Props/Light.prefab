@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013952230064}
   - component: {fileID: 108000011183104820}
-  - component: {fileID: 114000012177824460}
   m_Layer: 0
   m_Name: Spotlight (1)
   m_TagString: Untagged
@@ -37,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011073675636}
   - component: {fileID: 108000010627232262}
-  - component: {fileID: 114000013748870772}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -115,9 +113,11 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 7bfa397542db9f544a561c17ec132109, type: 2}
   m_StaticBatchInfo:
@@ -130,6 +130,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -229,47 +230,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114000012177824460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010922640884}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114000013748870772
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011824798848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SampleCount: 12
-  ScatteringCoef: 1
-  ExtinctionCoef: 0.01
-  SkyboxExtinctionCoef: 0.9
-  MieG: 0.1
-  HeightFog: 0
-  HeightScale: 0.1
-  GroundLevel: 0
-  Noise: 1
-  NoiseScale: 0.015
-  NoiseIntensity: 3.84
-  NoiseIntensityOffset: 0.3
-  NoiseVelocity: {x: 8, y: 3}
-  MaxRayLength: 400
-  _frustumCorners:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!135 &135000013696339802
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -2,28 +2,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking.Match;
 
-public class RoomListItem : MonoBehaviour
-{
+public class RoomListItem : MonoBehaviour {
 
-    public delegate void JoinRoomDelegate(MatchInfoSnapshot _match);
-    private JoinRoomDelegate joinRoomCallback;
+	public delegate void JoinRoomDelegate(MatchInfoSnapshot _match);
+	private JoinRoomDelegate joinRoomCallback;
 
-    [SerializeField]
-    private Text roomNameText;
+	[SerializeField]
+	private Text roomNameText;
 
-    private MatchInfoSnapshot match;
+	private MatchInfoSnapshot match;
 
-    public void Setup(MatchInfoSnapshot _match, JoinRoomDelegate _joinRoomCallback)
-    {
-        match = _match;
-        joinRoomCallback = _joinRoomCallback;
+	public void Setup (MatchInfoSnapshot _match, JoinRoomDelegate _joinRoomCallback)
+	{
+		match = _match;
+		joinRoomCallback = _joinRoomCallback;
 
-        roomNameText.text = match.name + " (" + match.currentSize + "/" + match.maxSize + ")";
+		roomNameText.text = match.name + " (" + match.currentSize + "/" + match.maxSize + ")";
     }
 
-    public void JoinRoom()
-    {
-        joinRoomCallback.Invoke(match);
-    }
+	public void JoinRoom ()
+	{
+		joinRoomCallback.Invoke(match);
+	}
 
 }
