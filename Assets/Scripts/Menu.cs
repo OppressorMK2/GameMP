@@ -30,33 +30,30 @@ namespace UnityEngine.PostProcessing
 
         void Start()
         {
-            if (SceneManager.GetActiveScene().name == "Menu")
+            if (dropDown)
             {
-                if (dropDown)
-                {
-                    dropDown.AddOptions(prests);
-                }
-                if (PlayerPrefs.GetInt("Vsync") == 0)
-                {
-                    VsyncToggle.isOn = false;
-                }
-                else if (PlayerPrefs.GetInt("Vsync") == 1)
-                {
-                    VsyncToggle.isOn = true;
-                }
-                if (PlayerPrefs.GetString("profiler") == "False")
-                {
-                    miniProfilerToggle.isOn = false;
-                }
-                else if (PlayerPrefs.GetString("profiler") == "True")
-                {
-                    miniProfilerToggle.isOn = true;
-                }
-                Volumeslider.value = PlayerPrefs.GetFloat("volume");
-                MotiobBlursliderVolume.value = PlayerPrefs.GetFloat("motionBlur");
-                dropDown.value = PlayerPrefs.GetInt("aaIndex");
-                QualitySettings.vSyncCount = PlayerPrefs.GetInt("Vsync");
+                dropDown.AddOptions(prests);
             }
+            if (PlayerPrefs.GetInt("Vsync") == 0)
+            {
+                VsyncToggle.isOn = false;
+            }
+            else if (PlayerPrefs.GetInt("Vsync") == 1)
+            {
+                VsyncToggle.isOn = true;
+            }
+            if (PlayerPrefs.GetString("profiler") == "False")
+            {
+                miniProfilerToggle.isOn = false;
+            }
+            else if (PlayerPrefs.GetString("profiler") == "True")
+            {
+                miniProfilerToggle.isOn = true;
+            }
+            Volumeslider.value = PlayerPrefs.GetFloat("volume");
+            MotiobBlursliderVolume.value = PlayerPrefs.GetFloat("motionBlur");
+            dropDown.value = PlayerPrefs.GetInt("aaIndex");
+            QualitySettings.vSyncCount = PlayerPrefs.GetInt("Vsync");
         }
 
         void Update()
@@ -148,6 +145,11 @@ namespace UnityEngine.PostProcessing
             MotionBlurSettings.shutterAngle = amount;
             cc.motionBlur.settings = MotionBlurSettings;
             PlayerPrefs.SetFloat("motionBlur", amount);
+        }
+
+        public void resume()
+        {
+            Paused = false;
         }
 
         public void ChangeAA(int index)
