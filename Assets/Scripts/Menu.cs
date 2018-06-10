@@ -83,6 +83,7 @@ namespace UnityEngine.PostProcessing
             if (Paused && !optionsMenu.activeSelf)
             {
                 player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+                weaponry.GetComponent<WeaponManager>().enabled = false;
                 weaponry.GetComponentInChildren<GunMouvement>().enabled = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
@@ -97,6 +98,7 @@ namespace UnityEngine.PostProcessing
             else
             {
                 player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+                weaponry.GetComponent<WeaponManager>().enabled = false;
                 weaponry.GetComponentInChildren<GunMouvement>().enabled = true;
                 ammoCounter.SetActive(true);
                 crossHairs.SetActive(true);
