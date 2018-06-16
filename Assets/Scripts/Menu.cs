@@ -98,7 +98,7 @@ namespace UnityEngine.PostProcessing
             else
             {
                 player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
-                weaponry.GetComponent<WeaponManager>().enabled = false;
+                weaponry.GetComponent<WeaponManager>().enabled = true;
                 weaponry.GetComponentInChildren<GunMouvement>().enabled = true;
                 ammoCounter.SetActive(true);
                 crossHairs.SetActive(true);
