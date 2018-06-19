@@ -29,9 +29,9 @@ public class Model : NetworkBehaviour {
     void FixedUpdate()
     {
         //set the "Walk" parameter to the v axis value
-        animator.SetFloat("Walk", v);
-        animator.SetFloat("Turn", h);
-        animator.SetFloat("Sprint", sprint);
+        animator.SetFloat("Walk", v, 0.1f, Time.deltaTime);
+        animator.SetFloat("Turn", h, 0.1f, Time.deltaTime);
+        animator.SetFloat("Sprint", sprint, 0.2f, Time.deltaTime);
     }
 
     void Sprinting()
