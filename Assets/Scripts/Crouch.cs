@@ -6,6 +6,7 @@ using UnityEngine;
 public class Crouch : MonoBehaviour {
 
     public float crouchSpeed = 10f;
+    public bool crouched = false;
     public Vector3 crouchPos;
     public Vector3 DefaultPosition;
     public FirstPersonController fps;
@@ -22,10 +23,12 @@ public class Crouch : MonoBehaviour {
 	}
     void crouch ()
     {
+        crouched = true;
         transform.localPosition = Vector3.Lerp(transform.localPosition, crouchPos, crouchSpeed * Time.deltaTime);
     }
     void UnCrouch()
     {
+        crouched = false;
         transform.localPosition = Vector3.Lerp(transform.localPosition, DefaultPosition, crouchSpeed * Time.deltaTime);
     }
 }

@@ -24,6 +24,10 @@ public class Model : NetworkBehaviour {
         }
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
+        if (GetComponentInChildren<Crouch>().crouched)
+        {
+            //animator.SetBool("",);
+        }
     }
 
     void FixedUpdate()
