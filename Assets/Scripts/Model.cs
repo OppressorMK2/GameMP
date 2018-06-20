@@ -10,7 +10,8 @@ public class Model : NetworkBehaviour {
     public float h; //horizontal movements
     public float sprint;
     public bool grounded = true;
-     
+    public UnityEngine.PostProcessing.Menu menu;
+
     void Update()
     {
         CheckForInput();
@@ -26,7 +27,7 @@ public class Model : NetworkBehaviour {
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
         grounded = GetComponent<CapsuleCollider>().isTrigger;
-        if (fps.readyJump && Input.GetKey(KeyCode.Space))
+        if (fps.readyJump && Input.GetKey(KeyCode.Space) && !menu.Paused)
         {
             animator.SetBool("Jump", true);
         }else
@@ -34,7 +35,6 @@ public class Model : NetworkBehaviour {
             animator.SetBool("Jump", false);
         }
         animator.SetBool("Crouch", GetComponentInChildren<Crouch>().crouched);
-        Debug.Log(fps.m_PreviouslyGrounded);
     }
 
     void FixedUpdate()

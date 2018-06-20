@@ -12016,6 +12016,7 @@ MonoBehaviour:
   m_Jump: 0
   m_CharacterController: {fileID: 0}
   m_PreviouslyGrounded: 0
+  readyJump: 1
 --- !u!114 &114757884252736802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12944,6 +12945,7 @@ MonoBehaviour:
   h: 0
   sprint: 0
   grounded: 1
+  menu: {fileID: 114923851799312952}
 --- !u!114 &114979172231490314
 MonoBehaviour:
   m_ObjectHideFlags: 1
