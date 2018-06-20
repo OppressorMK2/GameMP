@@ -26,7 +26,7 @@ public class Model : NetworkBehaviour {
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
         grounded = GetComponent<CapsuleCollider>().isTrigger;
-        if (fps.m_PreviouslyGrounded && Input.GetKey(KeyCode.Space))
+        if (fps.readyJump && Input.GetKey(KeyCode.Space))
         {
             animator.SetBool("Jump", true);
         }else
@@ -34,6 +34,7 @@ public class Model : NetworkBehaviour {
             animator.SetBool("Jump", false);
         }
         animator.SetBool("Crouch", GetComponentInChildren<Crouch>().crouched);
+        Debug.Log(fps.m_PreviouslyGrounded);
     }
 
     void FixedUpdate()
