@@ -9,6 +9,7 @@ public class Model : NetworkBehaviour {
     public float v; //vertical movements
     public float h; //horizontal movements
     public float sprint;
+    public bool grounded = true;
      
     void Update()
     {
@@ -24,10 +25,15 @@ public class Model : NetworkBehaviour {
         }
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
-        if (GetComponentInChildren<Crouch>().crouched)
+        grounded = GetComponent<CapsuleCollider>().isTrigger;
+        if (fps.m_PreviouslyGrounded && Input.GetKey(KeyCode.Space))
         {
-            //animator.SetBool("",);
+            animator.SetBool("Jump", true);
+        }else
+        {
+            animator.SetBool("Jump", false);
         }
+        animator.SetBool("Crouch", GetComponentInChildren<Crouch>().crouched);
     }
 
     void FixedUpdate()

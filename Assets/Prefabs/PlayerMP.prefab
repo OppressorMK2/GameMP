@@ -10366,7 +10366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 95320530254191906}
-  m_ParameterSendBits: 7
+  m_ParameterSendBits: 31
   param0: 
   param1: 
   param2: 
@@ -11661,6 +11661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crouchSpeed: 10
+  crouched: 0
   crouchPos: {x: 0, y: -0.2, z: 0}
   DefaultPosition: {x: 0, y: 0.3, z: 0}
   fps: {fileID: 114751739328270496}
@@ -12942,6 +12943,7 @@ MonoBehaviour:
   v: 0
   h: 0
   sprint: 0
+  grounded: 1
 --- !u!114 &114979172231490314
 MonoBehaviour:
   m_ObjectHideFlags: 1
