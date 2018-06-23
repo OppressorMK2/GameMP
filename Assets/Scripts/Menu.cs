@@ -61,7 +61,7 @@ namespace UnityEngine.PostProcessing
             if (SceneManager.GetActiveScene().name == "Menu")
             {
                 Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                Cursor.lockState = CursorLockMode.Confined;
                 Paused = false;
             }
 
