@@ -61,7 +61,7 @@ namespace UnityEngine.PostProcessing
             if (SceneManager.GetActiveScene().name == "Menu")
             {
                 Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                Cursor.lockState = CursorLockMode.Confined;
                 Paused = false;
             }
 
@@ -86,7 +86,6 @@ namespace UnityEngine.PostProcessing
                 weaponry.GetComponent<WeaponManager>().enabled = false;
                 weaponry.GetComponentInChildren<GunMouvement>().enabled = false;
                 Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
                 ammoCounter.SetActive(false);
                 crossHairs.SetActive(false);
                 pauseMenu.SetActive(true);
@@ -103,6 +102,14 @@ namespace UnityEngine.PostProcessing
                 ammoCounter.SetActive(true);
                 crossHairs.SetActive(true);
                 pauseMenu.SetActive(false);
+            }
+            if (!Paused)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Confined;
             }
         }
 

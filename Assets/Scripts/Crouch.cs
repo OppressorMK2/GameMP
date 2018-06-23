@@ -13,7 +13,7 @@ public class Crouch : MonoBehaviour {
 
     void Update ()
     {
-		if (Input.GetKey("c") && !fps.m_IsWalking)
+		if (Input.GetKey("c") && !fps.m_IsWalking || Input.GetKey(KeyCode.LeftControl) && !fps.m_IsWalking)
         {
             crouch();
         }else
