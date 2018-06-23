@@ -11196,6 +11196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95897425329895116}
   ScopeAnim: {fileID: 95734738984472894}
+  animatorH: {fileID: 95320530254191906}
   player: {fileID: 1950037069186048}
   ScopeOverLay: {fileID: 1265492033687988}
   CrossHair: {fileID: 1840769855354528}
@@ -11206,6 +11207,7 @@ MonoBehaviour:
   speed: 12
   normalFOV: 65
   AdsWalkSpeed: 1.5
+  crouchSpeed: 2.5
 --- !u!114 &114456744806059858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12661,6 +12663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 95961413555219470}
+  animatorH: {fileID: 95320530254191906}
   player: {fileID: 1950037069186048}
   CrossHair: {fileID: 1840769855354528}
   WeaponCamera: {fileID: 20385657031428458}
@@ -12669,7 +12672,8 @@ MonoBehaviour:
   scopedFOV: 50
   speed: 4
   normalFOV: 65
-  AdsWalkSpeed: 4
+  AdsWalkSpeed: 3
+  crouchSpeed: 2.5
 --- !u!114 &114889324130331482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12847,6 +12851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 95873182095574118}
+  animatorH: {fileID: 95320530254191906}
   player: {fileID: 1950037069186048}
   CrossHair: {fileID: 1840769855354528}
   WeaponCamera: {fileID: 20385657031428458}
@@ -12855,7 +12860,8 @@ MonoBehaviour:
   scopedFOV: 50
   speed: 4
   normalFOV: 65
-  AdsWalkSpeed: 3
+  AdsWalkSpeed: 2.75
+  crouchSpeed: 2.5
 --- !u!114 &114947087046775930
 MonoBehaviour:
   m_ObjectHideFlags: 1

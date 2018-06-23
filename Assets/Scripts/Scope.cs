@@ -10,6 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public Animator animator;
         public Animator ScopeAnim;
+        public Animator animatorH;
 
         public GameObject player;
         public GameObject ScopeOverLay;
@@ -23,6 +24,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float speed = 0.15f;
         public float normalFOV = 60f;
         public float AdsWalkSpeed = 1.5f;
+        public float crouchSpeed = 2.5f;
 
         private float originalSpeed;
 
@@ -51,6 +53,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 player.GetComponent<FirstPersonController>().m_WalkSpeed = AdsWalkSpeed;
                 CrossHair.gameObject.SetActive(false);
                 StartCoroutine(ScopeDelay());
+            }
+            else if (animatorH.GetBool("Crouch") && animator.GetBool("Scoped"))
+            {
+                player.GetComponent<FirstPersonController>().m_WalkSpeed = crouchSpeed;
+            }
+            else if (animatorH.GetBool("Crouch") && !animator.GetBool("Scoped"))
+            {
+                player.GetComponent<FirstPersonController>().m_WalkSpeed = crouchSpeed;
+                maincamera.fieldOfView = Mathf.Lerp(maincamera.fieldOfView, normalFOV, speed * Time.deltaTime);
+                WeaponCamera.gameObject.SetActive(true);
+                ScopeAnim.SetBool("Scoped", false);
+                CrossHair.gameObject.SetActive(true);
             }
             else
             {

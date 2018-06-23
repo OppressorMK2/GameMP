@@ -11,7 +11,7 @@ public class Crouch : MonoBehaviour {
     public Vector3 DefaultPosition;
     public FirstPersonController fps;
 
-	void Update ()
+    void Update ()
     {
 		if (Input.GetKey("c") && !fps.m_IsWalking)
         {
@@ -24,11 +24,13 @@ public class Crouch : MonoBehaviour {
     void crouch ()
     {
         crouched = true;
+        fps.m_WalkSpeed = 2.5f;
         transform.localPosition = Vector3.Lerp(transform.localPosition, crouchPos, crouchSpeed * Time.deltaTime);
     }
     void UnCrouch()
     {
         crouched = false;
+        fps.m_WalkSpeed = 4f;
         transform.localPosition = Vector3.Lerp(transform.localPosition, DefaultPosition, crouchSpeed * Time.deltaTime);
     }
 }
