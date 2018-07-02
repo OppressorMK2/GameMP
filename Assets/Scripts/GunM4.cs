@@ -107,7 +107,7 @@ public class GunM4 : MonoBehaviour
     IEnumerator Reload ()
     {
         isReloading = true;
-        Debug.Log("Reloading");
+        //Debug.Log("Reloading");
 
         animator.SetBool("Reloading", true);
 
