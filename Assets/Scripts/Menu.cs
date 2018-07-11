@@ -26,7 +26,8 @@ namespace UnityEngine.PostProcessing
         List<string> prests = new List<string>() { "Extreme Performance", "Performance", "Default", "Quality", "Extreme Quality" };
 
         public Slider MotiobBlursliderVolume;
-        public Slider Volumeslider;
+        public Slider VolumesliderMaster;
+        public Slider VolumesliderEffects;
 
         void Start()
         {
@@ -50,7 +51,8 @@ namespace UnityEngine.PostProcessing
             {
                 miniProfilerToggle.isOn = true;
             }
-            Volumeslider.value = PlayerPrefs.GetFloat("volume");
+            VolumesliderMaster.value = PlayerPrefs.GetFloat("volumeMaster");
+            VolumesliderEffects.value = PlayerPrefs.GetFloat("volumeEffects");
             MotiobBlursliderVolume.value = PlayerPrefs.GetFloat("motionBlur");
             dropDown.value = PlayerPrefs.GetInt("aaIndex");
             QualitySettings.vSyncCount = PlayerPrefs.GetInt("Vsync");
@@ -132,10 +134,16 @@ namespace UnityEngine.PostProcessing
             PlayerPrefs.SetInt("Vsync", QualitySettings.vSyncCount);
         }
 
-        public void SetVolume(float volume)
+        public void SetVolumeMaster(float volumeMaster)
         {
-            audiomixer.SetFloat("volume", volume);
-            PlayerPrefs.SetFloat("volume", volume);
+            audiomixer.SetFloat("volumeMaster", volumeMaster);
+            PlayerPrefs.SetFloat("volumeMaster", volumeMaster);
+        }
+
+        public void SetVolumeEffects(float volumeEffects)
+        {
+            audiomixer.SetFloat("volumeEffects", volumeEffects);
+            PlayerPrefs.SetFloat("volumeEffects", volumeEffects);
         }
 
         public void changeScene(string SceneName)

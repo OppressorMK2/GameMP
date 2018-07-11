@@ -32,11 +32,15 @@ public class GunG18 : MonoBehaviour
     public Animator animator;
     public GameObject cartrage;
     public UnityEngine.PostProcessing.Menu Menu;
+    public GameObject hitmarker;
+    public GameObject canvas;
 
     [Header("Audio")]
     public AudioClip gunSound;
     public float Volume;
-    public AudioSource AudioSource;
+    public AudioSource AudioSourceMaster;
+    public AudioSource AudioSourceEffects;
+    public AudioClip hitMarkerSound;
 
     [Header("Recoil")]
     public Recoil recoilComponent;
@@ -132,7 +136,7 @@ public class GunG18 : MonoBehaviour
 
         muzzleflash.Play();
         cartrage.GetComponent<ParticleSystem>().Play();
-        AudioSource.PlayOneShot(gunSound, Volume);
+        AudioSourceMaster.PlayOneShot(gunSound, Volume);
 
         recoilComponent.StartRecoil(amountOfRecoil, maxRecoilx, recoilSpeed);
         recoilComponentCam.StartRecoil(amountOfRecoilCam, maxRecoilxCam, recoilSpeedCam);
@@ -151,6 +155,13 @@ public class GunG18 : MonoBehaviour
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactforce);
+            }
+
+            if (hit.collider.transform.name == "PlayerMP(Clone)")
+            {
+                print("hit");
+                AudioSourceEffects.PlayOneShot(hitMarkerSound, 1f);
+                Instantiate(hitmarker, canvas.transform);
             }
 
             GameObject impactGO = Instantiate(impacteffect, hit.point, Quaternion.LookRotation(hit.normal));
