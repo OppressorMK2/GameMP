@@ -11,6 +11,7 @@ namespace UnityEngine.PostProcessing
     {
         public GameObject crossHairs;
         public GameObject ammoCounter;
+        public GameObject HeathCounter;
         public GameObject optionsMenu;
         public GameObject pauseMenu;
         public GameObject BackOPTMENU;
@@ -89,6 +90,7 @@ namespace UnityEngine.PostProcessing
                 weaponry.GetComponentInChildren<GunMouvement>().enabled = false;
                 Cursor.visible = true;
                 ammoCounter.SetActive(false);
+                HeathCounter.SetActive(false);
                 crossHairs.SetActive(false);
                 pauseMenu.SetActive(true);
             }
@@ -102,12 +104,14 @@ namespace UnityEngine.PostProcessing
                 weaponry.GetComponent<WeaponManager>().enabled = true;
                 weaponry.GetComponentInChildren<GunMouvement>().enabled = true;
                 ammoCounter.SetActive(true);
+                HeathCounter.SetActive(true);
                 crossHairs.SetActive(true);
                 pauseMenu.SetActive(false);
             }
             if (!Paused)
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.Confined;
             }
             else
             {
