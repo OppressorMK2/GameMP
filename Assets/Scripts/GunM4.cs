@@ -4,10 +4,10 @@
 */
 
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class GunM4 : MonoBehaviour 
+public class GunM4 : NetworkBehaviour 
 {
     #region Variables
     [Header("Stats")]
@@ -165,7 +165,7 @@ public class GunM4 : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactforce);
             }
 
-            if (hit.collider.transform.name == "PlayerMP(Clone)")
+            if (hit.collider.transform.tag == "Player")
             {
                 print("hit");
                 AudioSourceEffects.PlayOneShot(hitMarkerSound, 1f);
