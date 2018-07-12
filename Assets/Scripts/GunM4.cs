@@ -166,10 +166,8 @@ public class GunM4 : NetworkBehaviour
             }
 
             if (hit.collider.transform.tag == "Player")
-            {
-                print("hit");
-                AudioSourceEffects.PlayOneShot(hitMarkerSound, 1f);
-                Instantiate(hitmarker, canvas.transform);
+            {               
+                Hit();
             }
 
             GameObject impactGO = Instantiate(impacteffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -177,5 +175,12 @@ public class GunM4 : NetworkBehaviour
         }
     }
 
-	#endregion
+    void Hit()
+    {
+        print("hit");
+        AudioSourceEffects.PlayOneShot(hitMarkerSound, 1f);
+        Instantiate(hitmarker, canvas.transform);
+    }
+
+    #endregion
 }

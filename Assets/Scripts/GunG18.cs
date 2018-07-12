@@ -4,9 +4,10 @@
 */
 
 using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class GunG18 : MonoBehaviour
+public class GunG18 : NetworkBehaviour
 {
     #region Variables
     [Header("Stats")]
@@ -159,14 +160,18 @@ public class GunG18 : MonoBehaviour
 
             if (hit.collider.transform.name == "PlayerMP(Clone)")
             {
-                print("hit");
-                AudioSourceEffects.PlayOneShot(hitMarkerSound, 1f);
-                Instantiate(hitmarker, canvas.transform);
+                Hit();
             }
 
             GameObject impactGO = Instantiate(impacteffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2f);
         }
+    }
+    void Hit()
+    {
+        print("hit");
+        AudioSourceEffects.PlayOneShot(hitMarkerSound, 1f);
+        Instantiate(hitmarker, canvas.transform);
     }
 
     #endregion
