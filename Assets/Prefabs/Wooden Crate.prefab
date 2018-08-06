@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54388274164698660}
   - component: {fileID: 64031244853037176}
   - component: {fileID: 114038400222316474}
+  - component: {fileID: 114618488247621728}
   m_Layer: 0
   m_Name: Wooden Crate
   m_TagString: Untagged
@@ -53,9 +54,11 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b0f94b4f453fe694390c7390253f3543, type: 2}
   m_StaticBatchInfo:
@@ -68,6 +71,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -107,9 +111,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c07081b9837c87f44a0d6641ea3733f6, type: 3}
 --- !u!114 &114038400222316474
@@ -125,4 +129,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructible: 1
   health: 350
+  txtHP: {fileID: 0}
   DestroyedV: {fileID: 1168907351885854, guid: b3dc6d5c1ab8158418b2f82094975753, type: 2}
+  PS: {fileID: 0}
+--- !u!114 &114618488247621728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054487486586214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 248
+    i1: 210
+    i2: 90
+    i3: 3
+    i4: 113
+    i5: 124
+    i6: 82
+    i7: 148
+    i8: 234
+    i9: 69
+    i10: 227
+    i11: 255
+    i12: 6
+    i13: 10
+    i14: 35
+    i15: 248
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
