@@ -98,7 +98,7 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                 BuildTargetGroup.PSM,
                 BuildTargetGroup.SamsungTV,
 #pragma warning restore CS0618 // Type or member is obsolete
-                BuildTargetGroup.Tizen,
+                //BuildTargetGroup.Tizen,
                 BuildTargetGroup.WSA 
             };
 
